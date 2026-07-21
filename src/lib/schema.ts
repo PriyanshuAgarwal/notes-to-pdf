@@ -58,12 +58,6 @@ export const ContentBlockSchema = z.discriminatedUnion("type", [
 		variant: z.enum(["note", "tip", "warning"]).describe("note = analogy/aside/context; tip = advice or interview tip; warning = gotcha, limitation, or risk."),
 		text: z.string().describe("The highlighted content. Keep concise — callouts are for emphasis, not long prose."),
 	}),
-
-	z.object({
-		type: z.literal("table"),
-		headers: z.array(z.string()).min(1).describe("Column headers."),
-		rows: z.array(z.array(z.string())).min(1).describe("Each row is an array of cell strings. Every row MUST have the same number of cells as there are headers."),
-	}),
 ]);
 
 export const SectionSchema = z.object({
@@ -71,9 +65,7 @@ export const SectionSchema = z.object({
 	blocks: z
 		.array(ContentBlockSchema)
 		.min(1)
-		.describe(
-			"The content of this section as one or more blocks. Interleave block types freely — a section may mix a paragraph, a table, code, and bullets in whatever order best presents the material.",
-		),
+		.describe("The content of this section as one or more blocks. Interleave block types freely — a section may mix a paragraph, code, and bullets in whatever order best presents the material."),
 });
 
 export const StructuredNoteSchema = z.object({
@@ -107,4 +99,3 @@ export type BulletsBlock = Extract<ContentBlock, { type: "bullets" }>;
 export type StepsBlock = Extract<ContentBlock, { type: "steps" }>;
 export type CodeBlock = Extract<ContentBlock, { type: "code" }>;
 export type CalloutBlock = Extract<ContentBlock, { type: "callout" }>;
-export type TableBlock = Extract<ContentBlock, { type: "table" }>;

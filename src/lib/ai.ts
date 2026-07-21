@@ -14,11 +14,11 @@ import { google } from "@ai-sdk/google";
  */
 
 // Fast, cheap, free-tier friendly. Good structured-output support.
-export const structuringModel = google("gemini-3.5-flash");
+export const structuringModel = google("gemini-3.1-flash-lite");
 
 // Same model is fine for Q&A; kept separate so you can tune them independently
 // later (e.g. a smaller model for chat, a stronger one for structuring).
-export const chatModel = google("gemini-3.5-flash");
+export const chatModel = google("gemini-3.1-flash-lite");
 
 /** Input guardrails shared across routes. */
 export const INPUT_LIMITS = {

@@ -14,7 +14,7 @@ export default function Home() {
 					Notes → PDF
 				</a>
 				<div className="flex items-center gap-5">
-					<a href="#" className="rounded-lg bg-blue-600 px-5 py-2.5 text-base font-medium text-white hover:bg-blue-700">
+					<a href="/notes" className="rounded-lg bg-blue-600 px-5 py-2.5 text-base font-medium text-white hover:bg-blue-700">
 						Try it free
 					</a>
 				</div>
@@ -30,7 +30,7 @@ export default function Home() {
 						</h1>
 						<p className="max-w-lg text-lg text-slate-600">Paste rough meeting notes, class notes, or project updates. AI organizes them into structured documents ready to export.</p>
 						<div className="flex flex-wrap items-center gap-4">
-							<a href="#" className="rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700">
+							<a href="/notes" className="rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700">
 								Try it free
 							</a>
 							<a href="#" className="flex items-center gap-2 rounded-lg border border-slate-200 px-6 py-3 text-base font-medium text-slate-700 hover:bg-slate-50">

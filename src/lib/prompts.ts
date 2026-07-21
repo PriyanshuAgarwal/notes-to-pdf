@@ -3,10 +3,11 @@
 /**
  * System prompt for the structuring call.
  *
- * The Zod schema's per-field `.describe()` strings carry most of the
- * field-level instructions. This prompt sets the overall task, the fidelity
- * rules (no fabrication), and the few block-selection heuristics that are
- * easier to state once here than to repeat on every field.
+ * The explicit "Output format" block below is load-bearing: Google's
+ * structured-output mode does not strictly enforce discriminated-union field
+ * names, so without showing the model the exact per-block shape it will
+ * improvise field names (e.g. "bullets" instead of "items", or invent "icon"
+ * / "title" on callouts). Listing the literal shapes eliminates that drift.
  */
 export const STRUCTURING_SYSTEM_PROMPT = `You are a document-structuring engine. You receive messy, unstructured notes and reorganize them into a clean, well-structured document that matches the provided schema.
 
@@ -17,20 +18,32 @@ Core rules:
 - Choose the number and order of sections to fit the material, the way a reader would want to encounter it.
 
 Block selection:
-- Use "steps" for anything sequential (procedures, algorithms, end-to-end flows) where order matters.
-- Use "bullets" for lists where order does NOT matter (features, characteristics, notes).
-- Use "code" for any code snippet, and preserve it verbatim — do not reformat or "correct" it. Set the correct language label.
-- Use "table" when the source compares items across consistent dimensions. Every row must have exactly as many cells as there are headers.
-- Use "callout" for asides: variant "note" for analogies/context, "tip" for advice, "warning" for gotchas/risks/limitations.
-- Use "subheading" to group related blocks within a section when the material has clear sub-parts.
-- Omit the top-level summary for pure reference material (revision notes, cheat sheets) where it adds nothing.
+- "steps" for anything sequential (procedures, algorithms, flows) where order matters.
+- "bullets" for lists where order does NOT matter (features, characteristics, notes).
+- "code" for any code snippet, preserved verbatim with the correct language label.
+- "callout" for asides: "note" for analogies/context, "tip" for advice, "warning" for gotchas/risks.
+- "subheading" to group related blocks within a section.
+- For tabular or comparison data, use "bullets" — one bullet per row, e.g. "Meeting 1: 3k–4k". Do not attempt to render tables.
+- Omit the top-level summary for pure reference material where it adds nothing.
+
+OUTPUT FORMAT — CRITICAL:
+Each block object must use EXACTLY these field names and NO others. Do not rename fields to match the block type. Do not add extra fields (no "icon", no "title", no "bullets", no "steps" as field names).
+
+- paragraph:  { "type": "paragraph", "text": "string" }
+- subheading: { "type": "subheading", "text": "string" }
+- bullets:    { "type": "bullets", "items": ["string", "string"] }
+- steps:      { "type": "steps", "items": ["string", "string"] }
+- code:       { "type": "code", "language": "string", "code": "string" }
+- callout:    { "type": "callout", "variant": "note" | "tip" | "warning", "text": "string" }
+
+The list array is ALWAYS named "items" for both "bullets" and "steps" — never "bullets" or "steps".
+A "callout" has ONLY "type", "variant", and "text" — no other fields.
 
 Return only content grounded in the notes.`;
 
 /**
- * Builds the system prompt for the Q&A route. The full notes are injected
- * directly into context (no RAG — a single document fits the window), and the
- * model is constrained to answer only from them.
+ * Builds the system prompt for the Q&A route. Full notes injected into context
+ * (no RAG — a single document fits the window). The model answers only from them.
  */
 export function buildQaSystemPrompt(notes: string): string {
 	return `You are a helpful assistant answering questions about a specific document. The user's notes are provided below. Answer questions using ONLY the information in these notes.
