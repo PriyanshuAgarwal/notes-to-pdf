@@ -21,113 +21,175 @@ export default function Home() {
 			</nav>
 
 			{/* Hero */}
-			<section className="bg-slate-50 px-6 py-16 lg:px-12 lg:py-24">
-				<div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+			<section className="bg-slate-50 px-4 py-16 lg:px-8 lg:py-24">
+				<div className="mx-auto grid max-w-8xl items-center gap-6 lg:grid-cols-[1fr_1.5fr]">
 					<div className="space-y-6">
-						<span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-600">AI-Powered Note Structuring</span>
-						<h1 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl">
-							Turn messy notes into <span className="text-blue-600">professional PDFs</span> in seconds.
+						<span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-600">
+							<svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" />
+							</svg>
+							AI-Powered Note Structuring
+						</span>
+						<h1 className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 lg:text-5xl">
+							From messy notes to polished PDFs{" "}
+							<span className="relative inline-block text-blue-600">
+								in seconds.
+								<svg className="absolute -bottom-2 left-0 h-3 w-full text-blue-500" preserveAspectRatio="none" viewBox="0 0 120 12" fill="none">
+									<path d="M2 8C30 2 90 2 118 8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+								</svg>
+							</span>
 						</h1>
-						<p className="max-w-lg text-lg text-slate-600">Paste rough meeting notes, class notes, or project updates. AI organizes them into structured documents ready to export.</p>
+						<p className="max-w-lg text-lg text-slate-600">
+							Paste your meeting notes, class notes, or project updates. Our AI organizes them into professional, structured documents you can share or export.
+						</p>
 						<div className="flex flex-wrap items-center gap-4">
-							<a href="/notes" className="rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700">
+							<a href="/notes" className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700">
 								Try it free
-							</a>
-							<a href="#" className="flex items-center gap-2 rounded-lg border border-slate-200 px-6 py-3 text-base font-medium text-slate-700 hover:bg-slate-50">
 								<svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+									<path d="M5 12h14M12 5l7 7-7 7" />
+								</svg>
+							</a>
+							<a href="#" className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3 text-base font-medium text-slate-700 hover:bg-slate-50">
+								<svg className="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 									<circle cx="12" cy="12" r="10" />
 									<path d="M10 8l6 4-6 4V8z" strokeLinejoin="round" />
 								</svg>
 								View example
 							</a>
 						</div>
-						<div className="flex items-center gap-6 text-sm text-slate-500">
+						<div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500">
 							<span className="flex items-center gap-2">
-								<svg className="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-									<path d="M20 6L9 17l-5-5" />
-								</svg>{" "}
+								<svg className="h-4 w-4 text-blue-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+									<rect x="2" y="5" width="20" height="14" rx="2" />
+									<path d="M2 10h20" />
+								</svg>
 								No credit card required
 							</span>
 							<span className="flex items-center gap-2">
-								<svg className="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-									<path d="M12 8v4l3 3M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
-								</svg>{" "}
+								<svg className="h-4 w-4 text-blue-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+									<circle cx="12" cy="12" r="10" />
+									<path d="M12 6v6l4 2" />
+								</svg>
 								Setup in 30 seconds
 							</span>
 							<span className="flex items-center gap-2">
-								<svg className="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+								<svg className="h-4 w-4 text-blue-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
 									<path d="M7 10l5 5 5-5" />
 									<path d="M12 15V3" />
-								</svg>{" "}
+								</svg>
 								Export in one click
 							</span>
 						</div>
-					</div>
-
-					<div className="relative grid min-w-0 grid-cols-[1fr_auto_1fr] items-center gap-4">
-						<div className="min-w-0 space-y-3 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Before: Messy notes</p>
-							<div className="space-y-2 text-sm text-slate-600">
-								<p className="font-medium text-slate-800">design team sync 5/20</p>
-								<p>lots to cover</p>
-								<p>pdf output still messy :(</p>
-								<p>need cleaner structure</p>
-								<p>
-									+ check design system
-									<br />
-									updates
-								</p>
-								<p className="pt-2">who's taking the pdf work?</p>
-								<p>
-									i can help w/ layout
-									<br />
-									if needed
-								</p>
-								<p className="pt-2">
-									Also - doc templates??
-									<br />
-									maybe later
-								</p>
-								<p className="pt-2">
-									let's ship v2 of the
-									<br />
-									export next week
+						<div className="flex items-center gap-4 pt-2">
+							<div className="flex -space-x-2">
+								<img className="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/150?img=1" alt="User" />
+								<img className="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/150?img=2" alt="User" />
+								<img className="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/150?img=3" alt="User" />
+								<img className="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/150?img=4" alt="User" />
+								<img className="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/150?img=5" alt="User" />
+							</div>
+							<div className="space-y-0.5">
+								<div className="flex items-center gap-1">
+									<svg className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+									</svg>
+									<svg className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+									</svg>
+									<svg className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+									</svg>
+									<svg className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+									</svg>
+									<svg className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+									</svg>
+								</div>
+								<p className="text-sm text-slate-600">
+									<strong className="font-semibold text-slate-900">Loved by 5,000+ users</strong> from students to professionals
 								</p>
 							</div>
 						</div>
-						<div className="rounded-full bg-slate-100 p-3 text-slate-600 shadow-sm">
-							<svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-								<path d="M5 12h14M12 5l7 7-7 7" />
-							</svg>
-						</div>
-						<div className="min-w-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-							<p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">After: Structured PDF</p>
-							<div className="space-y-4">
-								<p className="text-base font-semibold text-slate-900">Design Team Sync</p>
-								<div className="border-t border-slate-100 pt-3">
-									<p className="text-xs font-semibold text-blue-600">Summary</p>
-									<p className="mt-1 text-sm text-slate-600">The team discussed improving the PDF export, assigning ownership, and planning updates to the design system.</p>
+					</div>
+
+					<div className="relative flex items-stretch gap-5">
+						<div className="min-w-0 flex-1">
+							<p className="mb-2 text-base font-bold uppercase tracking-wider text-slate-700 text-center ">Before: Messy notes</p>
+							<div className="space-y-3 rounded-xl border border-slate-200 bg-white p-6 shadow-sm h-full">
+								<div className="space-y-4 font-mono text-base leading-relaxed text-slate-700">
+									<p>
+										design team sync 5/20
+										<br />
+										lots to cover
+									</p>
+									<p>
+										pdf output still messy :(
+										<br />
+										need cleaner structure
+										<br />+ check design system updates
+									</p>
+									<p>
+										who's taking the pdf work?
+										<br />
+										i can help w/ layout
+										<br />
+										if needed
+									</p>
+									<p>
+										Also - doc templates??
+										<br />
+										maybe later
+									</p>
+									<p>
+										let's ship v2 of the
+										<br />
+										export next week
+									</p>
 								</div>
-								<div className="border-t border-slate-100 pt-3">
-									<p className="text-xs font-semibold text-blue-600">Decisions</p>
-									<ul className="mt-1 list-disc pl-4 text-sm text-slate-600">
+							</div>
+						</div>
+						<div className="flex items-center justify-center self-center px-1">
+							<div className="rounded-full bg-slate-100 p-3 text-slate-600 shadow-sm">
+								<svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+									<path d="M5 12h14M12 5l7 7-7 7" />
+								</svg>
+							</div>
+						</div>
+						<div className="min-w-0 flex-1">
+							<p className="mb-2 text-base font-bold uppercase tracking-wider text-slate-700 text-center">After: Structured PDF</p>
+							<div className="space-y-5 rounded-xl border border-slate-200 bg-white p-6 shadow-sm h-full">
+								<p className="text-2xl font-bold text-slate-900">Design Team Sync</p>
+								<div className="border-t border-slate-100 pt-4">
+									<p className="text-lg font-semibold text-blue-600">Summary</p>
+									<p className="mt-2 text-base leading-relaxed text-slate-700">The team discussed improving the PDF export, assigning ownership, and planning updates to the design system.</p>
+								</div>
+								<div className="border-t border-slate-100 pt-4">
+									<p className="text-lg font-semibold text-blue-600">Decisions</p>
+									<ul className="mt-2 list-disc pl-5 text-base leading-relaxed text-slate-700">
 										<li>Ship version 2 of the export next week</li>
 									</ul>
 								</div>
-								<div className="border-t border-slate-100 pt-3">
-									<p className="text-xs font-semibold text-blue-600">Action Items</p>
-									<div className="mt-1 space-y-1 text-sm text-slate-600">
-										<p>
-											<span className="mr-2 inline-block h-3 w-3 rounded border border-slate-300 align-middle"></span>Alex to own the PDF export work
+								<div className="border-t border-slate-100 pt-4">
+									<p className="text-lg font-semibold text-blue-600">Action Items</p>
+									<div className="mt-2 space-y-2 text-base leading-relaxed text-slate-700">
+										<p className="flex items-start gap-3">
+											<svg className="mt-1 h-4 w-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+												<rect x="3" y="3" width="18" height="18" rx="2" />
+											</svg>
+											Alex to own the PDF export work
 										</p>
-										<p>
-											<span className="mr-2 inline-block h-3 w-3 rounded border border-slate-300 align-middle"></span>Taylor to share updates on the design system
+										<p className="flex items-start gap-3">
+											<svg className="mt-1 h-4 w-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+												<rect x="3" y="3" width="18" height="18" rx="2" />
+											</svg>
+											Taylor to share updates on the design system
 										</p>
 									</div>
 								</div>
-								<a href="#" className="mt-2 inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3 py-1.5 text-sm font-medium text-blue-600 hover:bg-blue-50">
-									<svg className="h-4 w-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+								<a href="#" className="mt-2 inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-4 py-2 text-base font-medium text-blue-600 hover:bg-blue-50">
+									<svg className="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
 										<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
 										<path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
 									</svg>
@@ -142,66 +204,64 @@ export default function Home() {
 			{/* Steps */}
 			<section className="px-6 py-20 lg:px-12">
 				<div className="mx-auto max-w-6xl">
-					<h2 className="mb-16 text-center text-2xl font-bold text-slate-900">From notes to PDF in 3 simple steps</h2>
-					<div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-center md:gap-8">
-						<div className="flex items-start gap-4">
-							<div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-								<svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-									<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-									<path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" />
-									<path d="M12 11h4" />
-									<path d="M12 16h4" />
-									<path d="M8 11h.01" />
-									<path d="M8 16h.01" />
+					<h2 className="mb-16 text-center text-2xl font-bold text-slate-900">3 Simple Steps</h2>
+					<div className="flex flex-col items-stretch gap-6 md:flex-row md:items-center md:justify-center">
+						<div className="flex flex-1 items-start gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm min-h-[160px]">
+							<div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+								<svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+									<rect x="8" y="2" width="8" height="4" rx="1" />
+									<path d="M6 4h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+									<path d="M9 12h6M9 16h6" />
 								</svg>
+								<span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">1</span>
 							</div>
-							<div className="max-w-[220px]">
-								<div className="mb-1 flex items-center gap-2">
-									<span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">1</span>
-									<h3 className="text-base font-semibold text-slate-900">Paste your notes</h3>
-								</div>
-								<p className="text-sm text-slate-600">Add your raw notes, meeting transcripts, or ideas.</p>
+							<div>
+								<h3 className="text-base font-semibold text-slate-900">Paste Your Notes</h3>
+								<p className="mt-1 text-sm leading-relaxed text-blue-600">Add messy notes, meeting transcripts, or project updates.</p>
 							</div>
 						</div>
 
-						<svg className="hidden h-5 w-5 shrink-0 text-slate-400 md:block" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-							<path d="M5 12h14M12 5l7 7-7 7" />
-						</svg>
+						<div className="hidden md:flex items-center justify-center px-2">
+							<svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+								<path d="M5 12h14M12 5l7 7-7 7" />
+							</svg>
+						</div>
 
-						<div className="flex items-start gap-4">
-							<div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-								<svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-									<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.937A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0L9.937 15.5z" />
+						<div className="flex flex-1 items-start gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm min-h-[160px]">
+							<div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+								<svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+									<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+									<path d="M14 2v6h6" />
+									<path d="M12 18l-2-2 2-2" />
+									<path d="M16 18l2-2-2-2" />
 								</svg>
+								<span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">2</span>
 							</div>
-							<div className="max-w-[220px]">
-								<div className="mb-1 flex items-center gap-2">
-									<span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">2</span>
-									<h3 className="text-base font-semibold text-slate-900">AI structures content</h3>
-								</div>
-								<p className="text-sm text-slate-600">Our AI organizes and formats your notes instantly.</p>
+							<div>
+								<h3 className="text-base font-semibold text-slate-900">AI Structures Content</h3>
+								<p className="mt-1 text-sm leading-relaxed text-blue-600">Our AI organizes and structures your notes intelligently.</p>
 							</div>
 						</div>
 
-						<svg className="hidden h-5 w-5 shrink-0 text-slate-400 md:block" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-							<path d="M5 12h14M12 5l7 7-7 7" />
-						</svg>
+						<div className="hidden md:flex items-center justify-center px-2">
+							<svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+								<path d="M5 12h14M12 5l7 7-7 7" />
+							</svg>
+						</div>
 
-						<div className="flex items-start gap-4">
-							<div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-								<svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+						<div className="flex flex-1 items-start gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm min-h-[160px]">
+							<div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+								<svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
 									<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
 									<path d="M14 2v6h6" />
-									<path d="M12 18v-6" />
 									<path d="M9 15l3 3 3-3" />
+									<path d="M12 18V9" />
 								</svg>
+								<span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-[10px] font-bold text-white">3</span>
 							</div>
-							<div className="max-w-[220px]">
-								<div className="mb-1 flex items-center gap-2">
-									<span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">3</span>
-									<h3 className="text-base font-semibold text-slate-900">Export your PDF</h3>
-								</div>
-								<p className="text-sm text-slate-600">Download a clean, professional PDF in one click.</p>
+							<div>
+								<h3 className="text-base font-semibold text-slate-900">Export Professional PDF</h3>
+								<p className="mt-1 text-sm leading-relaxed text-blue-600">Get a clean, polished PDF ready to share or save.</p>
 							</div>
 						</div>
 					</div>
